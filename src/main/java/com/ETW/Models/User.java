@@ -1,33 +1,21 @@
 package com.ETW.Models;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "tb_user")
 public class User {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "first_name", length = 30)
+    private long id;
     private String firstName;
-
-    @Column(name = "last_name", length = 30)
     private String lastName;
-
-    @Column(name = "username", length = 30)
     private String username;
-
-    @Column(name = "password", length = 30)
     private String password;
+    private String image;
+    private String dateCreated;
+    private String dateModified;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -51,8 +39,16 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String userName) {
+        this.username = userName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getPassword() {
@@ -61,5 +57,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public String getDateModified() {
+        return dateModified;
+    }
+
+    public void setDateModified(String dateModified) {
+        this.dateModified = dateModified;
     }
 }

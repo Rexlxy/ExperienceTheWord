@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.254.30.115/db_ETW?serverTimezone=UTC
+    url: jdbc:mysql://47.254.30.115/db_ETW?serverTimezone=PST
     username: root
     password: 12345
 

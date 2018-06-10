@@ -1,11 +1,11 @@
 package com.ETW.DAO;
 
-import com.ETW.Models.User;
+import com.ETW.Entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    List<User> findByUsername(String username);
+    List<UserEntity> findByUsername(String username);
 }
