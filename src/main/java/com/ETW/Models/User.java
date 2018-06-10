@@ -17,6 +17,12 @@ public class User {
     @Column(name = "last_name", length = 30)
     private String lastName;
 
+    @Column(name = "username", length = 30)
+    private String username;
+
+    @Column(name = "password", length = 30)
+    private String password;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +45,21 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

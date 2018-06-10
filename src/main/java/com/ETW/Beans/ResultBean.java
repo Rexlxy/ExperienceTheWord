@@ -40,6 +40,12 @@ public class ResultBean<T> implements Serializable {
         this.code = FAIL;
     }
 
+    public ResultBean(int code, String msg) {
+        super();
+        this.code = code;
+        this.msg = msg;
+    }
+
     public String getMsg() {
         return msg;
     }
