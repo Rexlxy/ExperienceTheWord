@@ -19,6 +19,7 @@ public class UserController {
     @RequestMapping("/all")
     public ResultBean<List<User>> getAllUser() {
         List<User> userList = userService.findAllUses();
+
         return new ResultBean<>(userList);
     }
 }
