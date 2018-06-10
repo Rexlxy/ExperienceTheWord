@@ -1,23 +1,15 @@
-package com.ETW.Models;
+package com.ETW.Model;
 
-public class User {
+public class User extends  AbstractBaseModel {
 
-    private long id;
+
     private String firstName;
     private String lastName;
     private String username;
     private String password;
     private String image;
-    private String dateCreated;
-    private String dateModified;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -59,19 +51,4 @@ public class User {
         this.password = password;
     }
 
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
-    public String getDateModified() {
-        return dateModified;
-    }
-
-    public void setDateModified(String dateModified) {
-        this.dateModified = dateModified;
-    }
 }

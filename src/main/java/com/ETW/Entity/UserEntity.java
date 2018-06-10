@@ -20,7 +20,7 @@ public class UserEntity extends AbstractBaseEntity {
     @Column(name = "username", length = 30)
     private String username;
 
-    @Column(name = "password", length = 30)
+    @Column(name = "password", length = 50)
     private String password;
 
     @Column(name = "image", length = 50)

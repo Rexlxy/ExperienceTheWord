@@ -1,4 +1,4 @@
-package com.ETW.Beans;
+package com.ETW.Bean;
 
 import java.io.Serializable;
 

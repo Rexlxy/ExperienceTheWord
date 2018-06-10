@@ -1,50 +1,9 @@
-package com.ETW.Services;
+package com.Util;
 
-import com.ETW.DAO.UserRepository;
-import com.ETW.DateUtil;
 import com.ETW.Entity.UserEntity;
-import com.ETW.Models.User;
-import org.springframework.stereotype.Component;
+import com.ETW.Model.User;
 
-import javax.annotation.Resource;
-import java.util.List;
-
-@Component
-public class UserService {
-
-    @Resource
-    UserRepository userRepository;
-
-    public List<UserEntity> findAllUses() {
-        return userRepository.findAll();
-    }
-
-    public User saveUser(User user) {
-        // convert user model into user entity
-        UserEntity entity = new UserEntity();
-        UserService.modelToEntity(user, entity);
-        // save
-        entity = userRepository.save(entity);
-        // convert entity back to model
-        User model = new User();
-        UserService.entityToModel(entity, model);
-        return model;
-    }
-
-    public User getUserById(Long id) {
-        User model = new User();
-        UserService.entityToModel(userRepository.findById(id).get(), model);
-        return model;
-    }
-
-
-    public boolean ifUserExists(String username) {
-        if (userRepository.findByUsername(username).size() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+public class ConvertUtil {
 
     public static void modelToEntity(User model, UserEntity entity) {
 
@@ -83,7 +42,8 @@ public class UserService {
         } else {
             model.setDateModified("");
         }
-
-
     }
+
+
+
 }
