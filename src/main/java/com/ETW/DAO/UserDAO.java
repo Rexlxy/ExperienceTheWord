@@ -1,4 +1,8 @@
 package com.ETW.DAO;
 
-public class UserDAO {
+import com.ETW.Models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserDAO extends JpaRepository<User, Long> {
+
 }
