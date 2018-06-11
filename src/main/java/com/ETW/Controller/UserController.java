@@ -24,7 +24,7 @@ public class UserController {
         return new ResultBean<>(userEntityList);
     }
 
-    @RequestMapping(name = "/", method = RequestMethod.POST)
+    @RequestMapping(name = "/register", method = RequestMethod.POST)
     public ResultBean<User> register(User user) {
         if (userService.ifUserExists(user.getUsername())) {
             return new ResultBean(1, "Failed: username is used");
