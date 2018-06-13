@@ -6,6 +6,7 @@ import com.ETW.Entity.UserEntity;
 import com.ETW.Model.User;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -14,6 +15,13 @@ public class UserService {
 
     @Resource
     UserRepository userRepository;
+
+    public static UserRepository staticUserRepo;
+
+    @PostConstruct
+    public void init() {
+       staticUserRepo = this.userRepository;
+    }
 
     public List<UserEntity> findAllUses() {
         return userRepository.findAll();
