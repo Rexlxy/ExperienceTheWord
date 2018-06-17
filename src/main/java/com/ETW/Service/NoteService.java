@@ -20,7 +20,7 @@ public class NoteService {
     @Resource
     private UserRepository userRepository;
 
-    public Note createNote(Note noteModel) {
+    public Note saveNote(Note noteModel) {
         NoteEntity noteEntity = new NoteEntity();
         ConvertUtil.modelToEntity(noteModel, noteEntity);
         NoteEntity newNote = noteRepository.save(noteEntity);
@@ -38,5 +38,23 @@ public class NoteService {
             modelList.add(model);
         }
         return modelList;
+    }
+
+    public  boolean deleteNoteById(long noteId) {
+        try {
+            noteRepository.deleteById(noteId);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+    public boolean ifNoteExists(long noteId) {
+        if (noteRepository.findById(noteId).isPresent()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
